@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>House Price Prediction</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="left">
+
+<h1>🏠 House Price Predictor</h1>
+
+<p>
+Estimate residential property values using your trained machine learning model.
+</p>
+
+<form action="/predict" method="POST">
+
+<div class="grid">
+
+<input type="number"
+name="OverallQual"
+placeholder="Overall Quality"
+required>
+
+<input type="number"
+name="GrLivArea"
+placeholder="Living Area"
+required>
+
+<input type="number"
+name="GarageCars"
+placeholder="Garage Cars"
+required>
+
+<input type="number"
+name="GarageArea"
+placeholder="Garage Area"
+required>
+
+<input type="number"
+name="TotalBsmtSF"
+placeholder="Basement Area"
+required>
+
+<input type="number"
+name="YearBuilt"
+placeholder="Year Built"
+required>
+
+<input type="number"
+name="FullBath"
+placeholder="Bathrooms"
+required>
+
+<input type="number"
+name="TotRmsAbvGrd"
+placeholder="Rooms"
+required>
+
+</div>
+
+<button type="submit">
+
+Predict Price
+
+</button>
+
+</form>
+
+{% if prediction %}
+
+<div class="result">
+
+Estimated Price
+
+<div class="price">
+
+₹ {{ prediction }}
+
+</div>
+
+</div>
+
+{% endif %}
+
+</div>
+
+<div class="right">
+
+<div class="card">
+
+<h2>Model</h2>
+
+<p>Random Forest Regression</p>
+
+</div>
+
+<div class="card">
+
+<h2>Features</h2>
+
+<p>8 engineered inputs</p>
+
+</div>
+
+<div class="card">
+
+<h2>Deployment</h2>
+
+<p>Flask + Pickle Model</p>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
