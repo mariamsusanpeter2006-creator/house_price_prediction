@@ -35,5 +35,3 @@ After preprocessing and feature selection, multiple regression models were evalu
 | Frontend | HTML, CSS |
 
 ---
-
-## Project Structure
